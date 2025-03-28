@@ -1,4 +1,4 @@
-name: Deploy to Namecheap
+name: Deploy to PerfectBBQ
 
 on:
   push:
@@ -25,8 +25,8 @@ jobs:
     - name: Deploy to Namecheap
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        server: ftp.dudewatchthis.com
+        server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./build/
-        server-dir: /public_html/
+        server-dir: /public_html/restaurants/
